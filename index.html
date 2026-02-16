@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Francis Nabrynski | Author</title>
+    <meta
+      name="description"
+      content="Francis Nabrynski author website: books, media, bio, and contact details."
+      id="meta-description"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Francis Nabrynski | Author" id="meta-og-title" />
+    <meta
+      property="og:description"
+      content="Francis Nabrynski author website: books, media, bio, and contact details."
+      id="meta-og-description"
+    />
+    <meta property="og:image" content="" id="meta-og-image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a class="brand" href="#top" aria-label="Go to top of page">
+            <span class="brand-mark" id="brand-mark">FN</span>
+            <div>
+              <p class="brand-name" id="brand-name">Francis Nabrynski</p>
+              <p class="brand-sub" id="brand-sub">Public listings may also show Frank Roberts.</p>
+            </div>
+          </a>
+          <nav class="nav" aria-label="Primary">
+            <a href="#books">Books</a>
+            <a href="#media">Media</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <a
+            class="btn btn-primary"
+            id="header-buy-cta"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            aria-label="Buy featured book"
+          >
+            Buy Featured
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" id="top">
+          <div class="container hero-grid">
+            <div class="hero-text">
+              <p class="eyebrow">Featured Book</p>
+              <h1 id="featured-title">The Girl with the Black Hair</h1>
+              <p class="tagline" id="author-tagline">"Girls with Black Hair" erotic/romantic saga</p>
+              <p class="hero-description" id="featured-description">
+                Corporate ambition collides with complicated affairs, addiction, and ethics.
+              </p>
+              <p class="book-meta" id="featured-subtitle">Subtitle: A Reluctant Love Affair</p>
+              <div class="meta-grid">
+                <div>
+                  <p class="meta-label">ISBNs</p>
+                  <div class="isbn-list" id="featured-isbns"></div>
+                </div>
+                <div>
+                  <p class="meta-label">Location</p>
+                  <p id="author-location">Not publicly stated (press-release dateline: New York, NY)</p>
+                </div>
+              </div>
+              <div class="cta-row">
+                <a
+                  class="btn btn-primary"
+                  id="hero-buy-cta"
+                  href="#"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Buy featured book"
+                >
+                  Buy on Store
+                </a>
+                <a class="btn btn-ghost" href="#contact" aria-label="Go to contact section">
+                  Book Author
+                </a>
+              </div>
+            </div>
+            <div class="hero-card">
+              <div class="image-shell cover-shell">
+                <img
+                  id="featured-cover"
+                  src=""
+                  alt="Featured book cover"
+                  loading="eager"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  data-fallback="Featured cover unavailable"
+                />
+              </div>
+              <div class="hero-card-details">
+                <p class="hero-card-title" id="featured-card-title">The Girl with the Black Hair</p>
+                <p class="hero-card-sub" id="featured-card-blurb">A high-stakes romance where ambition, loyalty, and ethics collide.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="books" id="books">
+          <div class="container">
+            <div class="section-head">
+              <h2 id="books-heading">Published Book</h2>
+              <p id="books-subtitle">Currently published: The Girl with the Black Hair.</p>
+            </div>
+            <div class="carousel" aria-label="Book carousel">
+              <button class="carousel-btn prev" type="button" aria-label="Scroll previous books">
+                &#8592;
+              </button>
+              <div
+                class="carousel-viewport"
+                id="books-viewport"
+                tabindex="0"
+                aria-label="Scrollable list of books"
+              >
+                <div class="book-track" id="book-track"></div>
+              </div>
+              <button class="carousel-btn next" type="button" aria-label="Scroll next books">
+                &#8594;
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="media" id="media">
+          <div class="container">
+            <div class="section-head">
+              <h2>Media Trailer</h2>
+              <p>Spoken-word visuals and storytelling moments.</p>
+            </div>
+            <div class="media-shell" id="media-shell">
+              <div class="media-fallback" id="media-fallback">Trailer coming soon.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about" id="about">
+          <div class="container about-grid">
+            <div class="about-card">
+              <div class="image-shell headshot-shell">
+                <img
+                  class="headshot"
+                  id="author-headshot"
+                  src=""
+                  alt="Author headshot"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                  data-fallback="Author photo unavailable"
+                />
+              </div>
+            </div>
+            <div class="about-text">
+              <p class="eyebrow">About the Author</p>
+              <h2 id="about-name">Francis Nabrynski</h2>
+              <p class="tagline" id="about-tagline">"Girls with Black Hair" erotic/romantic saga</p>
+              <p id="about-bio" class="about-bio">US Marine Corps veteran with roughly 45 years in engineering and construction.</p>
+              <p class="about-meta" id="about-location">Location: Not publicly stated (press-release dateline: New York, NY)</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact" id="contact">
+          <div class="container contact-card">
+            <div>
+              <p class="eyebrow">Connect</p>
+              <h2>Bookings &amp; Press</h2>
+              <p id="contact-copy">For inquiries, use the details below.</p>
+            </div>
+            <div class="contact-details">
+              <a class="text-link" id="contact-email" href="mailto:">email@example.com</a>
+              <a
+                class="btn btn-ghost"
+                id="contact-booking"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                aria-label="Open booking or press link"
+              >
+                Booking / Press
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <p>&copy; <span id="year"></span> <span id="footer-name">Francis Nabrynski</span>. All rights reserved.</p>
+          <p id="footer-location">Not publicly stated (press-release dateline: New York, NY)</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
