@@ -62,8 +62,8 @@ const SITE = {
     youtube: "",
   },
   contact: {
-    email: "support@fultonbooks.com",
-    bookingUrl: "https://www.pr.com/",
+    email: "nabrynskif@gmail.com",
+    bookingUrl: "",
   },
 };
 
