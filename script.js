@@ -363,6 +363,62 @@ function setupCarousel() {
   updateButtons();
 }
 
+function setupNavigationState() {
+  const header = document.querySelector(".site-header");
+  const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
+  const sections = navLinks
+    .map((link) => {
+      const id = link.getAttribute("href");
+      if (!id) return null;
+      const section = document.querySelector(id);
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (sections.length === 0) return;
+
+  const setActive = (targetId) => {
+    sections.forEach(({ link }) => {
+      const isActive = link.getAttribute("href") === targetId;
+      link.classList.toggle("is-active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
+
+  const updateHeaderState = () => {
+    if (!header) return;
+    header.classList.toggle("scrolled", window.scrollY > 8);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      if (!visible.length) return;
+      const top = visible[0].target;
+      const active = sections.find(({ section }) => section === top);
+      if (active) {
+        setActive(`#${active.section.id}`);
+      }
+    },
+    {
+      root: null,
+      threshold: [0.35, 0.55, 0.75],
+      rootMargin: "-22% 0px -46% 0px",
+    }
+  );
+
+  sections.forEach(({ section }) => observer.observe(section));
+  setActive("");
+  updateHeaderState();
+  window.addEventListener("scroll", updateHeaderState, { passive: true });
+}
+
 function populatePage() {
   const description = `${SITE.featured.title}: ${SITE.featured.description}`;
   const brandMark = getBrandMark(SITE.author.name, SITE.author.brandMark);
@@ -380,12 +436,13 @@ function populatePage() {
   setText("brand-mark", brandMark);
   setText("brand-name", SITE.author.name);
   setText("brand-sub", SITE.author.subtitleLine);
+  setText("hero-signature", SITE.author.name);
   setText("author-tagline", SITE.author.shortTagline);
   setText("featured-title", SITE.featured.title);
   setText("featured-subtitle", `Subtitle: ${SITE.featured.subtitle || "None listed"}`);
   setText("featured-description", SITE.featured.description);
-  setText("featured-card-title", SITE.featured.title);
-  setText("featured-card-blurb", SITE.featured.cardBlurb);
+  setText("featured-card-title", SITE.author.name);
+  setText("featured-card-blurb", "Author");
   setText("author-location", SITE.author.location);
   setText("about-name", SITE.author.name);
   setText("about-tagline", SITE.author.shortTagline);
@@ -406,9 +463,9 @@ function populatePage() {
 
   const featuredCover = byId("featured-cover");
   if (featuredCover) {
-    featuredCover.src = SITE.featured.coverUrl || "";
-    featuredCover.alt = `${SITE.featured.title} cover`;
-    featuredCover.setAttribute("data-fallback", `${SITE.featured.title} cover unavailable`);
+    featuredCover.src = SITE.author.headshotUrl || SITE.featured.coverUrl || "";
+    featuredCover.alt = `${SITE.author.name} portrait`;
+    featuredCover.setAttribute("data-fallback", `${SITE.author.name} portrait unavailable`);
   }
 
   const headshot = byId("author-headshot");
@@ -431,8 +488,23 @@ function populatePage() {
     emailLink.textContent = SITE.contact.email;
     emailLink.href = `mailto:${SITE.contact.email}`;
   }
+  const utilityEmail = byId("utility-email");
+  if (utilityEmail) {
+    utilityEmail.textContent = `Email: ${SITE.contact.email}`;
+    utilityEmail.href = `mailto:${SITE.contact.email}`;
+  }
 
-  setHref("contact-booking", SITE.contact.bookingUrl || "#");
+  const bookingLink = byId("contact-booking");
+  const hasBooking = Boolean(SITE.contact.bookingUrl && SITE.contact.bookingUrl.trim());
+  setText("contact-heading", hasBooking ? "Bookings & Press" : "Contact");
+  if (bookingLink) {
+    if (hasBooking) {
+      bookingLink.href = SITE.contact.bookingUrl;
+      bookingLink.hidden = false;
+    } else {
+      bookingLink.remove();
+    }
+  }
 }
 
 function setCurrentYear() {
@@ -446,4 +518,5 @@ applyBooksLayoutMode();
 setupMedia();
 attachImageFallbacks();
 setupCarousel();
+setupNavigationState();
 setCurrentYear();
