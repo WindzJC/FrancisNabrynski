@@ -12,9 +12,9 @@ export function FeaturedBookSection({ featuredBook }: FeaturedBookSectionProps) 
     <section id="featured-book" className="relative z-10 -mt-10 bg-ink pb-20 pt-12 md:-mt-14 md:pt-16">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
         <div className="rounded-[2rem] border border-gold/20 bg-[linear-gradient(160deg,rgba(22,14,20,0.95),rgba(10,7,11,0.9))] p-6 shadow-luxe md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[320px,1fr] lg:items-center">
-            <div className="mx-auto w-full max-w-[320px]">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-gold/25 bg-black/35">
+          <div className="grid gap-8 lg:grid-cols-[360px,1fr] lg:items-start">
+            <div className="mx-auto w-full max-w-[340px] lg:max-w-[360px]">
+              <div className="relative aspect-[2/3] overflow-hidden rounded-2xl border border-gold/25 bg-black/35">
                 <Image src={featuredBook.cover} alt={featuredBook.coverAlt} fill className="object-cover" />
               </div>
             </div>

@@ -16,9 +16,9 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Author Website Template',
+  title: 'My West Coast Lisa',
   description:
-    'Responsive premium author website template built with Next.js App Router and Tailwind CSS.'
+    'Official website for My West Coast Lisa by Frank Roberts.'
 };
 
 export default function RootLayout({

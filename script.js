@@ -26,17 +26,17 @@ const DEFAULT_HEADSHOT_SVG = [
 
 const SITE = {
   author: {
-    name: "Francis Nabrynski",
+    name: "Frank Roberts",
     shortTagline: "\"Girls with Black Hair\" erotic/romantic saga",
     subtitleLine: "Public listings for this title may also show Frank Roberts.",
     location: "Florida, USA",
     longBio:
       "The author grew up in a small mill town in the Merrimack Valley of northern Massachusetts.\n\nAfter completing a two-year military service obligation as a draftee in the United States Marine Corps, including one tour of duty in Vietnam, he returned home to the small-town America he knew.\n\nInfluenced by this overseas adventure, he spent the next forty-five years traveling across the lower 48 states and internationally in fifteen countries on four continents while working in the engineering and construction industries.\n\nNow retired and happily remarried to a girl with black hair, he lives in Florida.",
     headshotUrl: "./francis headshot.png",
-    brandMark: "FN",
+    brandMark: "FR",
   },
   featured: {
-    title: "The Girl with the Black Hair",
+    title: "My West Coast Lisa",
     subtitle: "A Reluctant Love Affair",
     description:
       "Corporate ambition collides with complicated affairs, addiction, and ethics.",
@@ -47,7 +47,7 @@ const SITE = {
   },
   books: [
     {
-      title: "The Girl with the Black Hair",
+      title: "My West Coast Lisa",
       subtitle: "A Reluctant Love Affair",
       publisher: "Fulton Books",
       year: "2024",
@@ -423,7 +423,7 @@ function populatePage() {
   const description = `${SITE.featured.title}: ${SITE.featured.description}`;
   const brandMark = getBrandMark(SITE.author.name, SITE.author.brandMark);
 
-  document.title = `${SITE.author.name} | Author`;
+  document.title = SITE.featured.title;
   const descriptionMeta = byId("meta-description");
   if (descriptionMeta) descriptionMeta.setAttribute("content", description);
   const ogTitle = byId("meta-og-title");
@@ -441,8 +441,8 @@ function populatePage() {
   setText("featured-title", SITE.featured.title);
   setText("featured-subtitle", `Subtitle: ${SITE.featured.subtitle || "None listed"}`);
   setText("featured-description", SITE.featured.description);
-  setText("featured-card-title", SITE.author.name);
-  setText("featured-card-blurb", "Author");
+  setText("featured-card-title", SITE.featured.title);
+  setText("featured-card-blurb", SITE.featured.subtitle || "Featured release");
   setText("author-location", SITE.author.location);
   setText("about-name", SITE.author.name);
   setText("about-tagline", SITE.author.shortTagline);

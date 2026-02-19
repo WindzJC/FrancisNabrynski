@@ -1,6 +1,5 @@
 import { siteData } from '@/data/site-data';
 import { AboutSection } from '@/sections/about-section';
-import { AwardsStrip } from '@/sections/awards-strip';
 import { ContactSection } from '@/sections/contact-section';
 import { FeaturedBookSection } from '@/sections/featured-book-section';
 import { HeroSection } from '@/sections/hero-section';
@@ -16,7 +15,6 @@ export default function HomePage() {
       <HeroSection hero={siteData.hero} />
       <FeaturedBookSection featuredBook={siteData.featuredBook} />
       <TrailerSection trailer={siteData.trailer} />
-      <AwardsStrip awards={siteData.awards} />
       <AboutSection about={siteData.about} />
       <ReviewsSection testimonials={siteData.testimonials} />
       <ContactSection contact={siteData.contact} />
