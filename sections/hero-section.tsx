@@ -27,6 +27,9 @@ export function HeroSection({ hero }: HeroSectionProps) {
         <div className="w-full max-w-6xl rounded-3xl border border-gold/20 bg-[rgba(13,8,11,0.45)] p-6 text-white backdrop-blur-sm md:p-8 lg:p-10">
           <div className="grid gap-8 lg:grid-cols-[1.25fr,0.75fr] lg:items-end">
             <div>
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-gold md:text-base">
+                {hero.signature}
+              </p>
               <h1 className="max-w-4xl text-balance text-[clamp(2rem,5.2vw,4rem)] font-normal uppercase leading-[1.04] tracking-tight text-rose-mist">
                 {hero.headline}
               </h1>
