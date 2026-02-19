@@ -13,7 +13,7 @@ export function SiteFooter({ footer }: SiteFooterProps) {
           <h3 className="mt-3 font-display text-3xl text-white md:text-4xl">{footer.newsletterHeading}</h3>
           <p className="mt-3 max-w-md text-slate-300">{footer.newsletterCopy}</p>
         </div>
-        <form className="flex flex-col gap-3 sm:flex-row sm:items-start" action="#" method="post">
+        <form id="newsletter-signup" className="flex flex-col gap-3 sm:flex-row sm:items-start" action="#" method="post">
           <input
             type="email"
             placeholder="Your email"
@@ -23,7 +23,7 @@ export function SiteFooter({ footer }: SiteFooterProps) {
           />
           <button
             type="submit"
-            className="h-12 rounded-lg bg-[linear-gradient(135deg,#7a2f3e,#b8707f)] px-5 font-semibold text-white"
+            className="hover-lift h-12 rounded-lg bg-[linear-gradient(135deg,#7a2f3e,#b8707f)] px-5 font-semibold text-white"
           >
             Subscribe
           </button>
@@ -31,7 +31,10 @@ export function SiteFooter({ footer }: SiteFooterProps) {
       </div>
 
       <div className="mx-auto mt-10 flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 border-t border-white/10 px-4 pt-6 md:px-6">
-        <p className="text-sm text-slate-400">{footer.copyright}</p>
+        <div className="grid gap-1">
+          <p className="text-sm text-slate-400">{footer.copyright}</p>
+          {footer.sagaMicrocopy && <p className="text-xs text-slate-500">{footer.sagaMicrocopy}</p>}
+        </div>
       </div>
     </footer>
   );

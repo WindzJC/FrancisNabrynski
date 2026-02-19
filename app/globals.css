@@ -50,4 +50,99 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes line-sheen {
+    0% {
+      transform: translateX(-120%);
+      opacity: 0;
+    }
+    35% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+  }
+
+  .motion-fade-up {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+    animation: fade-up 700ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+    will-change: transform, opacity;
+  }
+
+  .motion-delay-1 {
+    animation-delay: 90ms;
+  }
+
+  .motion-delay-2 {
+    animation-delay: 170ms;
+  }
+
+  .motion-delay-3 {
+    animation-delay: 250ms;
+  }
+
+  .hover-lift {
+    transition:
+      transform 260ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      box-shadow 260ms ease,
+      border-color 260ms ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+    border-color: rgba(213, 187, 139, 0.44);
+  }
+
+  .sheen-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sheen-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 22%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: line-sheen 1800ms ease-out 220ms 1 forwards;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motion-fade-up,
+    .motion-delay-1,
+    .motion-delay-2,
+    .motion-delay-3 {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+
+    .hover-lift,
+    .hover-lift:hover {
+      transform: none;
+      box-shadow: none;
+      transition: none;
+    }
+
+    .sheen-line::after {
+      animation: none;
+      display: none;
+    }
+  }
 }

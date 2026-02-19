@@ -10,9 +10,9 @@ export function TrailerSection({ trailer }: TrailerSectionProps) {
   return (
     <section id="trailer" className="relative z-10 bg-ink pb-20 pt-6 md:pt-10">
       <div className="mx-auto w-full max-w-7xl px-4 md:px-6">
-        <div className="rounded-[2rem] border border-gold/20 bg-[linear-gradient(145deg,rgba(19,12,18,0.95),rgba(9,6,10,0.9))] p-6 shadow-luxe md:p-10">
+        <div className="motion-fade-up rounded-[2rem] border border-gold/20 bg-[linear-gradient(145deg,rgba(19,12,18,0.95),rgba(9,6,10,0.9))] p-6 shadow-luxe md:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold">{trailer.eyebrow}</p>
-          <div className="mt-4 grid gap-8 lg:grid-cols-[1fr,320px] lg:items-center">
+          <div className="motion-fade-up motion-delay-1 mt-4 grid gap-8 lg:grid-cols-[1fr,320px] lg:items-center">
             <div>
               <h2 className="font-display text-4xl text-white md:text-5xl">{trailer.title}</h2>
               <p className="mt-4 max-w-3xl text-lg leading-relaxed text-slate-200">{trailer.description}</p>
@@ -22,7 +22,7 @@ export function TrailerSection({ trailer }: TrailerSectionProps) {
             </div>
           </div>
 
-          <div className="mt-8 overflow-hidden rounded-2xl border border-gold/20 bg-[linear-gradient(135deg,rgba(143,49,71,0.28),rgba(9,6,10,0.78)_50%,rgba(213,187,139,0.18))]">
+          <div className="motion-fade-up motion-delay-2 hover-lift mt-8 overflow-hidden rounded-2xl border border-gold/20 bg-[linear-gradient(135deg,rgba(143,49,71,0.28),rgba(9,6,10,0.78)_50%,rgba(213,187,139,0.18))]">
             <div className="relative aspect-video">
               {hasVideo ? (
                 <video

@@ -4,6 +4,7 @@ import { ContactSection } from '@/sections/contact-section';
 import { FeaturedBookSection } from '@/sections/featured-book-section';
 import { HeroSection } from '@/sections/hero-section';
 import { ReviewsSection } from '@/sections/reviews-section';
+import { SagaSection } from '@/sections/saga-section';
 import { SiteFooter } from '@/sections/site-footer';
 import { SiteHeader } from '@/sections/site-header';
 import { TrailerSection } from '@/sections/trailer-section';
@@ -14,6 +15,7 @@ export default function HomePage() {
       <SiteHeader nav={siteData.nav} />
       <HeroSection hero={siteData.hero} />
       <FeaturedBookSection featuredBook={siteData.featuredBook} />
+      <SagaSection saga={siteData.saga} />
       <TrailerSection trailer={siteData.trailer} />
       <AboutSection about={siteData.about} />
       <ReviewsSection testimonials={siteData.testimonials} />

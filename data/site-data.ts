@@ -54,6 +54,23 @@ export type SiteData = {
     videoUrl?: string;
     posterUrl?: string;
   };
+  saga: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    premise: string;
+    updatesEmail: string;
+    books: Array<{
+      title: string;
+      subtitle: string;
+      installment: string;
+      teaser: string;
+      status: string;
+      available: boolean;
+      coverUrl?: string;
+      buyUrl?: string;
+    }>;
+  };
   awards: string[];
   seenOn: Array<{ name: string; href: string }>;
   about: {
@@ -76,6 +93,7 @@ export type SiteData = {
   footer: {
     newsletterHeading: string;
     newsletterCopy: string;
+    sagaMicrocopy?: string;
     copyright: string;
     socials: SocialLink[];
   };
@@ -104,7 +122,7 @@ export const siteData: SiteData = {
   nav: [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'My West Coast Lisa', href: '#featured-book' },
+    { label: 'Books', href: '#saga' },
     { label: 'Trailer', href: '#trailer' },
     { label: 'Reviews', href: '#reviews' },
     { label: 'Contact', href: '#contact' }
@@ -142,12 +160,56 @@ export const siteData: SiteData = {
   },
   trailer: {
     eyebrow: 'Book Trailer',
-    title: 'Official Trailer',
+    title: 'The Girl with the Black Hair',
     description:
-      'Watch the official teaser for My West Coast Lisa.',
+      '(A Reluctant Love Affair) - A dangerous attraction collides with ambition, loyalty, and personal consequence.',
     comingSoonLabel: 'Trailer Coming Soon',
     videoUrl: '/girl-with-the-black-hair-teaser.mp4',
     posterUrl: '/book-cover.png'
+  },
+  saga: {
+    eyebrow: 'Romantic Saga',
+    title: 'Romantic Saga: Girls with Black Hair (4-book series)',
+    subtitle: 'Books by Frank Roberts',
+    premise:
+      'A sweeping romantic saga of love, consequence, and second chances told across four interconnected books.',
+    updatesEmail: 'nabrynskif@gmail.com',
+    books: [
+      {
+        title: 'The Girl with the Black Hair',
+        subtitle: 'A Reluctant Love Affair',
+        installment: 'Book One',
+        teaser: 'A dangerous attraction collides with ambition, loyalty, and personal consequence.',
+        status: 'Published',
+        available: true,
+        coverUrl: '/book-cover.png',
+        buyUrl: 'https://www.barnesandnoble.com/w/the-girl-with-the-black-hair-frank-roberts/1145849279'
+      },
+      {
+        title: 'The Girl with the Black Hair',
+        subtitle: 'A Reluctant Love Affair',
+        installment: 'Book Two',
+        teaser: 'The affair deepens, and past choices return with higher stakes.',
+        status: 'Coming Soon',
+        available: false
+      },
+      {
+        title: 'The Other Girl with the Black Hair',
+        subtitle: 'Another Reluctant Love Affair',
+        installment: 'Book Three',
+        teaser: 'A new connection tests old promises and rewrites the rules of love.',
+        status: 'Coming Soon',
+        available: false
+      },
+      {
+        title: 'Another Girl with Black Hair',
+        subtitle: 'My West Coast Lisa',
+        installment: 'Book Four',
+        teaser: 'The saga reaches the west coast for a final chapter of reckoning and renewal.',
+        status: 'Coming Soon',
+        available: false
+      }
+    ]
   },
   awards: ['Marine Corps Veteran', '45+ Years in Engineering & Construction', 'Debut 4-Book Saga', 'Featured in Independent Press Releases'],
   seenOn: [
@@ -196,6 +258,7 @@ export const siteData: SiteData = {
   footer: {
     newsletterHeading: 'Get Updates',
     newsletterCopy: 'Join the mailing list for launch news, appearances, and exclusive updates.',
+    sagaMicrocopy: 'This romantic saga continues in Books Two-Four.',
     copyright: '© 2026 Frank Roberts. All rights reserved.',
     socials: [
       { platform: 'facebook', href: '#', label: 'Facebook' },
