@@ -16,9 +16,34 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'My West Coast Lisa',
+  metadataBase: new URL('https://frankroberts.pages.dev'),
+  title: 'Frank Roberts | Author of the Girls with Black Hair Saga',
   description:
-    'Official website for My West Coast Lisa by Frank Roberts.'
+    'Official author website of Frank Roberts, U.S. Marine Corps veteran and author of the Girls with Black Hair romantic saga. Explore his books, trailer, biography, and contact information.',
+  alternates: {
+    canonical: '/'
+  },
+  openGraph: {
+    type: 'website',
+    url: '/',
+    siteName: 'Frank Roberts',
+    title: 'Frank Roberts | Author of the Girls with Black Hair Saga',
+    description:
+      'Explore the books, story, trailer, and background of Frank Roberts, author of the Girls with Black Hair romantic saga.',
+    images: [
+      {
+        url: '/hero-bg.png',
+        alt: 'Frank Roberts author website'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Frank Roberts | Author of the Girls with Black Hair Saga',
+    description:
+      'Explore the books, story, trailer, and background of Frank Roberts, author of the Girls with Black Hair romantic saga.',
+    images: ['/hero-bg.png']
+  }
 };
 
 export default function RootLayout({
